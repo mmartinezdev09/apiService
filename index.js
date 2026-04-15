@@ -4,7 +4,7 @@ const app = express()
 app.use(express.json())
 
 app.get('/', (req, res) => {
-  res.json({ status: 'ok' })
+  res.json({ status: 'Bienvenido Rot Crash' })
 })
 
 const PORT = process.env.PORT || 3000
