@@ -14,15 +14,18 @@ app.get('/getProducts', (req, res) => {
       [
         {
           name: 'Ft-150',
-          prize: 200
+          prize: 200,
+          urlImage: 'https://raw.githubusercontent.com/mmartinezdev09/apiService/main/images/ft_150.jpeg'
         },
         {
           name: 'Ft-180',
-          prize: 100
+          prize: 100,
+          urlImage: 'https://raw.githubusercontent.com/mmartinezdev09/apiService/main/images/italika_180.jpeg'
         },
         {
-          name: 'Ft-110',
-          prize: 80
+          name: 'At-110',
+          prize: 80,
+          urlImage: 'https://raw.githubusercontent.com/mmartinezdev09/apiService/main/images/italika_at_110.jpg'
         }
       ]
     }
