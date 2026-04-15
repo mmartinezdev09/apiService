@@ -3,7 +3,7 @@ const app = express()
 
 app.use(express.json())
 
-app.get('/', (req, res) => {
+app.get('/welcome', (req, res) => {
   res.json({ status: 'Bienvenido Rot Crash' })
 })
 
