@@ -103,14 +103,9 @@ const products = {
   }
 }
 
-const productController = require("./FeatureProduct/control/productControll")
+const {ProductController} = require("./FeatureProduct/control/productControll")
 
-app.post('/getProductById', (req, res) => {
-  const { id } = req.body
-
-  return productController.ProductControll.getProductById(id)
-
-})
+app.post('/getProductById', ProductController.getProductById)
 
 const PORT = process.env.PORT || 3000
 
