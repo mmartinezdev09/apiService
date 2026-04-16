@@ -79,6 +79,10 @@ const ProductController = {
                 error: "Producto no encontrado"
             })
         }
+    },
+
+    getModels: (req, res) => {
+        
     }
 }
 
