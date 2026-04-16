@@ -34,30 +34,36 @@ app.get('/getProducts', (req, res) => {
 
 //post from products by id
 
+const products = {
+  1: {
+    name: "Balatas traseras Ft-150",
+    prize: 135.00,
+    imageUrl: "https://raw.githubusercontent.com/mmartinezdev09/apiService/main/images/products/ft150/balatas_150.jpg"
+  },
+  2: {
+    name: "Llantas",
+    prize: 100.0,
+    imageUrl: "https://raw.githubusercontent.com/mmartinezdev09/apiService/main/images/products/ft180/llantas.jpg"
+  },
+  3: {
+    name: "Llantas lisas",
+    prize: 100.0,
+    imageUrl: "https://raw.githubusercontent.com/mmartinezdev09/apiService/main/images/products/ft180/llantas.jpg"
+  }
+}
+
 app.post('/getProductById', (req, res) => {
   const { id } = req.body
 
-  let response = null
+  const product = products[id]
 
-  if (id === 1) {
-    response = {
-      name: "Balatas traseras Ft-150",
-      prize: 135.00,
-      imageUrl: ""
-    }
-  } else if (id === 2) {
-    response = {
-      name: "Llantas",
-      prize: 100.0,
-      imageUrl: ""
-    }
-  } else {
+  if (!product) {
     return res.status(404).json({
       error: "Producto no encontrado"
     })
   }
 
-  res.json(response)
+  res.json(product)
 })
 
 const PORT = process.env.PORT || 3000
