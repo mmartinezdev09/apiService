@@ -4,7 +4,7 @@ const app = express()
 app.use(express.json())
 
 app.get('/welcome', (req, res) => {
-  res.json({ status: 'Bienvenido Rot Crash' })
+  res.json({ status: 'Bienvenido nuevamente' })
 })
 
 app.get('/getProducts', (req, res) => {
