@@ -4,7 +4,12 @@ const app = express()
 app.use(express.json())
 
 app.get('/welcome', (req, res) => {
-  res.json({ status: 'Bienvenido nuevamente' })
+  res.json(
+    { 
+      message: 'Bienvenido nuevamente',
+      iconUrl: 'https://raw.githubusercontent.com/mmartinezdev09/apiService/main/images/main/icn_main.jpeg' 
+    }
+)
 })
 
 app.get('/getProducts', (req, res) => {
