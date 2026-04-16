@@ -70,7 +70,8 @@ const ProductController = {
 
     getProductById:(req, res) =>{
         console.log("request: ",req)
-        res.json(products[req.id])
+        const {id} = req.body
+        res.json(products[id])
     }
 }
 
