@@ -103,18 +103,13 @@ const products = {
   }
 }
 
+const productController = require("./FeatureProduct/control/productControll")
+
 app.post('/getProductById', (req, res) => {
   const { id } = req.body
 
-  const product = products[id]
+  return productController.ProductControll.getProductById(id)
 
-  if (!product) {
-    return res.status(404).json({
-      error: "Producto no encontrado"
-    })
-  }
-
-  res.json(product)
 })
 
 const PORT = process.env.PORT || 3000
