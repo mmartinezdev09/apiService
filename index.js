@@ -106,7 +106,7 @@ const products = {
 const {ProductController} = require("./FeatureProduct/control/productControll")
 
 app.post('/getProductById', ProductController.getProductById)
-
+app.get('/getAllProduct', ProductController.getProducts)
 const PORT = process.env.PORT || 3000
 
 app.listen(PORT, () => {

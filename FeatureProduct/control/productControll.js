@@ -64,10 +64,12 @@ const products = {
 
 const ProductController = {
     getProducts: (req, res) => {
+        console.log("All products", products)
         res.json(products);
     },
 
     getProductById:(req, res) =>{
+        console.log("request: ",req)
         res.json(products[req.id])
     }
 }
