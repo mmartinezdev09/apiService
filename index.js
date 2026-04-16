@@ -6,7 +6,7 @@ app.use(express.json())
 app.get('/welcome', (req, res) => {
   res.json(
     { 
-      message: 'Bienvenido nuevamente',
+      message: 'Bienvenido',
       iconUrl: 'https://raw.githubusercontent.com/mmartinezdev09/apiService/main/images/main/icn_main.jpg' 
     }
 )
