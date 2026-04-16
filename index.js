@@ -7,7 +7,7 @@ app.get('/welcome', (req, res) => {
   res.json(
     { 
       message: 'Bienvenido nuevamente',
-      iconUrl: 'https://raw.githubusercontent.com/mmartinezdev09/apiService/main/images/main/icn_main.jpeg' 
+      iconUrl: 'https://raw.githubusercontent.com/mmartinezdev09/apiService/main/images/main/icn_main.jpg' 
     }
 )
 })
