@@ -41,19 +41,51 @@ app.get('/getProducts', (req, res) => {
 
 const products = {
   1: {
-    name: "Balatas traseras Ft-150",
-    prize: 135.00,
-    imageUrl: "https://raw.githubusercontent.com/mmartinezdev09/apiService/main/images/products/ft150/balatas_150.jpg"
+    products: [
+      {
+        name: "Balatas traseras Ft-150",
+        prize: 135.00,
+        imageUrl: "https://raw.githubusercontent.com/mmartinezdev09/apiService/main/images/products/ft150/balatas_150.jpg"
+      },
+      {
+        name: "Chicote de clutch",
+        prize: 80.00,
+        imageUrl: ""
+      },
+      {
+        name: "Kit de arrastre",
+        prize: 287.00,
+        imageUrl: ""
+      },
+      {
+        name: "Foco para faro",
+        prize: 40.0,
+        imageUrl: ""
+      }
+    ]
   },
   2: {
-    name: "Llantas",
-    prize: 100.0,
-    imageUrl: "https://raw.githubusercontent.com/mmartinezdev09/apiService/main/images/products/ft180/llantas.jpg"
+    products: [
+      {
+        name: "Llantas",
+        prize: 100.0,
+        imageUrl: "https://raw.githubusercontent.com/mmartinezdev09/apiService/main/images/products/ft180/llantas.jpg"
+      },
+      {
+        name: "Palanca de cambios",
+        prize: 120.0,
+        imageUrl: ""
+      }
+    ]
   },
   3: {
-    name: "Llantas lisas",
-    prize: 100.0,
-    imageUrl: "https://raw.githubusercontent.com/mmartinezdev09/apiService/main/images/products/ft180/llantas.jpg"
+    products: [
+      {
+        name: "Espejos",
+        prize: 110.0,
+        imageUrl: ""
+      }
+    ]
   }
 }
 
