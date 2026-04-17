@@ -15,6 +15,5 @@ const PORT = process.env.PORT || 3000
 
 app.listen(PORT, () => {
   console.log(`Servidor corriendo en puerto ${PORT}`)
-  startJob()
   setInterval(() => { http.get(`https://apiservice-qwgz.onrender.com/welcome`, (res) => { console.log('ping ok', res.statusCode); }).on('error', (err) => { console.error('ping error', err.message); }); }, 5 * 60 * 1000);
 })
