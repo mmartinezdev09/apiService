@@ -1,5 +1,5 @@
 const express = require('express')
-const http = require('http')
+const axios = require('axios')
 const app = express()
 const { ProductController } = require("./FeatureProduct/controllers/productController")
 const { ModelController } = require("./FeatureProduct/controllers/modelController")
@@ -15,5 +15,8 @@ const PORT = process.env.PORT || 3000
 
 app.listen(PORT, () => {
   console.log(`Servidor corriendo en puerto ${PORT}`)
-  //setInterval(() => { http.get(`https://apiservice-qwgz.onrender.com/welcome`, (res) => { console.log('ping ok', res.statusCode); }).on('error', (err) => { console.error('ping error', err.message); }); }, 5 * 60 * 1000);
+  setInterval( async () => { 
+    const response = await axios.get('https://apiservice-qwgz.onrender.com/welcome');
+    console.log('RESPONSE OK 200 ', response.data);
+  }, 40 * 1000);
 })
