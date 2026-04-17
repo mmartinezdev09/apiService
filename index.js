@@ -12,7 +12,7 @@ app.post('/getProductById', ProductController.getProductById)
 app.get('/getAllProduct', ProductController.getProducts)
 const PORT = process.env.PORT || 3000
 
-app.listen(PORT, () => {
+app.listen(PORT,async () => {
   console.log(`Servidor corriendo en puerto ${PORT}`)
  (async ( ) => {
   setTimeout(() => {
