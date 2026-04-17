@@ -1,88 +1,42 @@
-const products = {
-    1: {
-        products: [
-            {
-                name: "Balatas traseras Ft-150",
-                prize: 135.00,
-                mark: "Generica",
-                availability: "Disponible",
-                imageUrl: "https://raw.githubusercontent.com/mmartinezdev09/apiService/main/images/products/ft150/balatas_150.jpg"
-            },
-            {
-                name: "Chicote de clutch",
-                prize: 80.00,
-                mark: "Italika",
-                availability: "Disponible",
-                imageUrl: ""
-            },
-            {
-                name: "Kit de arrastre",
-                prize: 287.00,
-                mark: "Motors",
-                availability: "Disponible",
-                imageUrl: ""
-            },
-            {
-                name: "Foco para faro",
-                prize: 40.0,
-                mark: "Duck",
-                availability: "Disponible",
-                imageUrl: ""
-            }
-        ]
-    },
-    2: {
-        products: [
-            {
-                name: "Llantas",
-                prize: 100.0,
-                mark: "Generica",
-                availability: "Disponible",
-                imageUrl: "https://raw.githubusercontent.com/mmartinezdev09/apiService/main/images/products/ft180/llantas.jpg"
-            },
-            {
-                name: "Palanca de cambios",
-                prize: 120.0,
-                mark: "Generica",
-                availability: "No disponible",
-                imageUrl: ""
-            }
-        ]
-    },
-    3: {
-        products: [
-            {
-                name: "Espejos",
-                prize: 110.0,
-                mark: "Generica",
-                availability: "Disponible",
-                imageUrl: ""
-            }
-        ]
+const { MongoClient, ServerApiVersion } = require('mongodb');
+const uri = "mongodb+srv://mmartinezdev09_db_user:t0znJyvgZOhy4xSl@cluster0.o5pdjxo.mongodb.net/?appName=Cluster0";
+
+const client = new MongoClient(uri,
+    {
+        serverApi:
+        {
+            version: ServerApiVersion.v1, strict: true, deprecationErrors: true,
+        }
+    }
+);
+
+let db; //connect data base 
+
+async function connectDB() {
+    if (!db) {
+        await client.connect();
+        db = client.db("users");
+        console.log("Mongo conectado");
     }
 }
 
 const ProductController = {
-    getProducts: (req, res) => {
-        console.log("All products", products)
-        res.json(products);
-    },
-
-    getProductById: (req, res) => {
-        console.log("request: ", req)
-        const { id } = req.body
-        const response = products[id]
-        if (response)
-            res.json(products[id])
-        else {
+    getProductById: async (req, res) => {
+        try {
+            await connectDB();
+            const { id } = req.body
+            const idBusqueda = Number(id); 
+            const result = await db.collection("products").findOne({ id: idBusqueda });
+            res.json(
+                {
+                    products: result.data
+                }
+            );
+        } catch (error) {
             res.status(404).json({
                 error: "Producto no encontrado"
             })
         }
-    },
-
-    getModels: (req, res) => {
-        
     }
 }
 

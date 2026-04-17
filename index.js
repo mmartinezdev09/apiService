@@ -10,7 +10,6 @@ app.use(express.json())
 app.get('/welcome', WelcomeController.getWelcomeMessage)
 app.get('/getProducts', ModelController.getModelsInventory)
 app.post('/getProductById', ProductController.getProductById)
-app.get('/getAllProduct', ProductController.getProducts)
 const PORT = process.env.PORT || 3000
 
 app.listen(PORT, () => {
