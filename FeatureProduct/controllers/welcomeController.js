@@ -1,5 +1,5 @@
 const welcomeResponse = {
-    message: 'Bienvenido amigo mio',
+    message: 'Bienvenido de nuevo',
     iconUrl: 'https://raw.githubusercontent.com/mmartinezdev09/apiService/main/images/main/icn_main.jpg'
 }
 
