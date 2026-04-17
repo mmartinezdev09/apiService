@@ -12,13 +12,16 @@ app.post('/getProductById', ProductController.getProductById)
 app.get('/getAllProduct', ProductController.getProducts)
 const PORT = process.env.PORT || 3000
 
-app.listen(PORT,async () => {
+app.listen(PORT, () => {
   console.log(`Servidor corriendo en puerto ${PORT}`)
- (async ( ) => {
-  setTimeout(() => {
-    // Code to execute after 2 seconds
-    console.log('😍')
-}, 2000);
-
-}) ( )
 })
+
+ setTimeout(async () => {
+        console.log("Job started...");
+        
+        // Await your logic (e.g., API call)
+        await doWork(); 
+        
+        console.log("Job finished, scheduling next run.");
+        startJob(); // Schedule the next execution
+    }, 5000);
