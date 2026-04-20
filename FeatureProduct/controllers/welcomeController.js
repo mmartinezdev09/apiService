@@ -1,6 +1,6 @@
 const welcomeResponse = {
     message: 'Bienvenido de nuevo',
-    iconUrl: 'https://raw.githubusercontent.com/mmartinezdev09/apiService/main/images/main/icn_main.jpg'
+    iconUrl: 'https://raw.githubusercontent.com/mmartinezdev09/apiService/main/images/main/icn_main_moto.jpg'
 }
 
 const WelcomeController = {
