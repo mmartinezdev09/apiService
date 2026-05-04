@@ -5,6 +5,7 @@ const { ProductController } = require("./FeatureProduct/controllers/productContr
 const { ModelController } = require("./FeatureProduct/controllers/modelController")
 const { WelcomeController } = require("./FeatureProduct/controllers/welcomeController")
 const { AllProductsController } = require("./FeatureProduct/controllers/allProductsController")
+const { UsersController } = require('./FeatureProduct/controllers/usersController')
 
 app.use(express.json())
 
@@ -12,6 +13,7 @@ app.get('/welcome', WelcomeController.getWelcomeMessage)
 app.get('/getProducts', ModelController.getModelsInventory)
 app.get('/getAllProducts', AllProductsController.getAllProducts)
 app.post('/getProductById', ProductController.getProductById)
+app.post('/login', UsersController.login)
 const PORT = process.env.PORT || 3000
 
 app.listen(PORT, () => {
